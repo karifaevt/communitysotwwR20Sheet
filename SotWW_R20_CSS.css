@@ -1,0 +1,291 @@
+/*----------------- Main Layout ------------------*/
+
+/* A CSS Grid example using "grid-template-areas"
+  https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas
+*/
+main {
+  display: grid;
+  width: 1076px;
+  height: 900px;
+  grid-gap: 0px;
+  grid-template-columns: 269px 1fr 1fr 1fr;
+  grid-template-rows: 90px 1fr 1fr 1fr 20px;
+  grid-template-areas:"header  header  header   power"
+                      "common  skill   defence  power"
+                      "common  attack  attack   power"
+                      "common  inv     inv      power"
+                      "common  inv    inv     power";
+}
+
+
+/*----------------- GENERAL CSS ------------------*/
+
+section {
+    padding: 2px;
+    border-style: solid;
+}
+
+/* CSS Flexbox styling, used for adjusting how content inside section behaves */
+.f-col {
+  display: flex;
+  flex-direction: column;
+}
+.f-row {
+  display: flex;
+  flex-direction: row;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.f-center {
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*----------------- Text & Input styling -----------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Lexend&display=swap");
+
+
+/* these are for overwriting default CSS that comes from Roll20 */
+
+.charsheet * {
+  font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+.charsheet h3{
+  text-align: center;
+  font-family: "Arial", "Helvetica", "sans-serif";
+}
+.charsheet label{
+  margin: 3px;
+  padding: 3px 0 0 0;
+  font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+.charsheet input[type="text"], input[type="number"]{
+  margin: 2px 4px;
+}
+
+.charsheet textarea {
+  width: 95%;
+  height: 85%;
+}
+
+/*------------- Section-specific CSS -------------*/
+
+.header {
+  grid-area: header;
+  background-color: #F1F1F1;
+  flex-direction: column;
+}
+
+.logo {
+  grid-area: logo;
+  background-color: #a396ad;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.skill {
+  grid-area: skill;
+  background-color: #F1F1F1;
+  justify-content: space-evenly;
+}
+
+.defence {
+  grid-area: defence;
+  background-color: #F1F1F1;
+  justify-content: space-evenly;
+}
+
+.common {
+  grid-area: common;
+  background-color: #F1F1F1;
+}
+
+.power {
+  grid-area: power;
+  background-color: #DBD3DC;
+}
+
+.power .repcontainer[data-groupname="repeating_power"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_power"] .repitem{
+  margin: 4px 0px;
+}
+
+.attack {
+  grid-area: attack;
+  background-color: #F1F1F1;
+}
+
+.inv {
+  grid-area: inv;
+  background-color: #F1F1F1;
+}
+
+.misc {
+  grid-area: misc;
+  background-color: #F1F1F1;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #F1F1F1;
+}
+
+/*  ------------------spell css--------------------------- */
+
+
+/*magic {
+  display: grid;
+  width: 1076px;
+  height: 900px;
+  grid-gap: 0px;
+  grid-template-columns: 269px 1fr 1fr 1fr;
+  grid-template-rows: 90px 1fr 1fr 1fr 20px;
+  grid-template-areas:"header  header  header   power"
+                      "common  skill   defence  power"
+                      "common  attack  attack   power"
+                      "common  inv     inv      power"
+                      "common  inv    inv     power";
+}
+
+
+
+/*{
+  display: grid;
+  width: 1076px;
+  height: 900px;
+  grid-gap: 0px;
+  grid-template-columns: 269px 1fr 1fr 1fr;
+  grid-template-rows: 90px 1fr 1fr 1fr 20px;
+  grid-template-areas: 
+  "tradh tradh tradh tradh"
+  "trads trads trads trads"
+  "tal1  inv inv inv"
+  "tal1 notes notes ntoes";
+}
+*/
+.tradh {
+  grid-area: tradh;
+  background-color: #DBD3DC;
+  justify-content: space-evenly;
+}
+
+.trads {
+    grid-area: trads;
+    background-color: #DBD3DC;
+    justify-content: space-evenly;
+}
+.notes {
+  grid-area: notes;
+  background-color: #DBD3DC;
+  justify-content: space-evenly;
+}
+
+.tal1 {
+    grid-area: tal1;
+    background-color: #F1F1F1;
+}
+
+.inv2 {
+  grid-area: inv;
+  background-color: #F1F1F1;
+}
+
+
+/*------------------------------------*\
+  #ROLL TEMPLATES
+\*------------------------------------*/
+/*
+.sheet-rolltemplate-rolls {
+  font-family: "Lexend";
+}
+.sheet-rolltemplate-rolls .sheet-container {
+  border: 3px solid black;
+  border-radius: 3px;
+}
+.sheet-rolltemplate-rolls .sheet-header {
+  background-color: var(--header-bg-color, #a83521);
+  color: var(--header-text-color, #FFF);
+  text-align: left;
+  text-transform: capitalize;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+.sheet-rolltemplate-rolls .sheet-title,
+.sheet-rolltemplate-rolls .sheet-name {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.sheet-rolltemplate-rolls .sheet-subtitle {
+  font-size: 1em;
+}
+.sheet-rolltemplate-rolls .sheet-container {
+  --header-bg-color: #a83521;
+  --header-text-color: #FFF;
+}
+
+.sheet-rolltemplate-rolls .sheet-content {
+  display: grid;
+  background: #FFF;
+  grid-template-columns: auto auto;
+  line-height: 1.4em;
+}
+.sheet-rolltemplate-rolls .sheet-content > div {
+  padding: 5px;
+}
+.sheet-rolltemplate-rolls .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+.sheet-rolltemplate-rolls .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-rolls .sheet-content :nth-child(4n) {
+  background: #EEE;
+}
+*/
+
+/* configure the tab buttons */
+.charsheet .sheet-character,
+.charsheet .sheet-magic,
+.charsheet .sheet-notes {
+    display: none;
+}
+
+/* style the active button */
+.charsheet .sheet-tabstoggle[value="character"] ~ div .sheet-button0 {outline: 2px solid purple;}
+.charsheet .sheet-tabstoggle[value="magic"] ~ div .sheet-button1 {outline: 2px solid purple;}
+.charsheet .sheet-tabstoggle[value="notes"] ~ div .sheet-button2 {outline: 2px solid purple;}
+
+/* show the selected tab */
+.charsheet .sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.charsheet .sheet-tabstoggle[value="magic"] ~ div.sheet-magic,
+.charsheet .sheet-tabstoggle[value="notes"] ~ div.sheet-notes {
+    display: block;
+}
+
+/* Hiding Objects Toggles */
+.charsheet .sheet-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+.charsheet .sheet-columns > * {
+  flex: 1;
+}
+
+.charsheet input.sheet-toggle-show:not(:checked) ~ div.sheet-body,
+.charsheet input.sheet-toggle-hide:checked ~ div.sheet-body {
+    display: none;
+}

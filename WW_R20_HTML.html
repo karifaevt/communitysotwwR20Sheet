@@ -1,0 +1,669 @@
+<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="character" />
+<div>
+    <div class="sheet-3colrow">
+        <div class="sheet-col"></div>
+        <div class="sheet-col" align="center">
+            <button type="action" name="act_character" class="sheet-button0">Character</button>
+            <button type="action" name="act_magic" class="sheet-button1">Magic</button>
+            <button type="action" name="act_notes" class="sheet-button2">Notes</button>
+        </div>
+        <div class="sheet-col"></div>
+    </div>
+</div>
+
+
+
+<div class="sheet-character">
+    <span>
+
+        <main>
+              <section class="header f-center">
+            
+                <div class="sheet-4colrow">
+                    <div class="sheet-col">
+                        <label>Character</label>
+                        <input name="attr_character_name" type="text" style="width: 36em">
+                    </div>
+                    <div class="sheet-col" align="center">
+                        <label> Level</label>
+                        <input name="attr_character_level" type="text" style="width: 3em;">
+                    </div>
+                    <div class="sheet-col" align="center">
+                        <label>Size</label>
+                        <input name="attr_Size" type="text" style="width: 3em;">
+                    </div>
+                    <div class="sheet-col" align="center">
+                        <label>Speed</label>
+                        <input name="attr_Speed" type="text" style="width: 3em;">        
+                    </div>
+                </div>
+              </section>
+            
+              <section class="common">
+                    <label>Ancestry</label><input name="attr_ancestry" type="text" value="" >
+                    <button type="roll" name="roll_anctraits" value="&{template:default} {{name=@{ancestry}}} {{=@{anctraits}}}"></button>
+						<div>
+							<input type="checkbox" class="sheet-toggle-show"/>
+								<span>show ancestry traits</span>
+									<div class="sheet-body">
+										<textarea style="max-width: 95%; min-width:95%;min-height:100px;font-size:8pt" name="attr_anctraits" value="Traits"></textarea>
+									</div>
+						</div>
+                    <label>Novice Path:</label><input name="attr_novice" type="text" value="">
+                    <button type="roll" name="roll_NoviceTalents" value="&{template:default}{{name=@{novice}}}{{=@{NoviceTalents}}}"></button>
+						<div>
+							<input type="checkbox" class="sheet-toggle-show"/>
+								<span>show novice path talents</span>
+									<div class="sheet-body">
+										<textarea style="max-width: 95%; min-width:95%;min-height:100px;font-size:8pt" name="attr_NoviceTalents" value="Talents"></textarea>
+									</div>
+						</div>
+                    <label>Expert Path:</label> <input name="attr_expert" type="text" value="">
+                    <button type="roll" name="roll_ExpertTalents" value="&{template:default}{{name=@{expert}}}{{=@{ExpertTalents}}}"></button>
+						<div>
+							<input type="checkbox" class="sheet-toggle-show"/>
+								<span>show expert path talents</span>
+									<div class="sheet-body">
+										<textarea style="max-width: 95%; min-width:95%;min-height:100px;font-size:8pt" name="attr_ExpertTalents" value="Talents"></textarea>
+									</div>
+						</div>
+                    <label>Master Path:</label> <input name="attr_master" type="text" value="">
+                    <button type="roll" name="roll_MasterTalents" value="&{template:default}{{name=@{master}}}{{=@{MasterTalents}}}"></button>
+						<div>
+							<input type="checkbox" class="sheet-toggle-show"/>
+								<span>show master path talents</span>
+									<div class="sheet-body">
+										<textarea style="max-width: 95%; min-width:95%;min-height:100px;font-size:8pt" name="attr_MasterTalents" value="Talents"></textarea>
+									</div>
+						</div>
+			 </section>
+            
+              <section class="skill f-col nowrap">
+                
+                
+                <div class="f-row">
+                  <label>Strength</label>
+                  <input type="number" name="attr_str" value="10" style="width: 4em">
+                  <input type="number" name="attr_strMod" value="(@{str}-10)" disabled="true" style="width: 3em"/>
+                  <button type="roll" name="roll_str" value="&{template:default} {{name=Strength}} {{roll= [[1d20+@{strMod}+(?{+B/-b|}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                </div>
+                <div class="f-row nowrap">
+                  <label>Agility</label>
+                  <input type="number" name="attr_agi" value="10" style="width: 4em">
+                  <input type="number" name="attr_agiMod" value="(@{agi}-10)" disabled="true" style="width: 3em"/>
+                  <button type="roll" name="roll_agi" value="&{template:default} {{name=Agility}} {{roll= [[1d20+@{agiMod}+(?{+b/-b|}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                </div>
+                <div class="f-row nowrap">
+                  <label>Intellect</label>
+                  <input type="number" name="attr_int" value="10" style="width: 4.5em">
+                  <input type="roll" name="attr_intMod" value="(@{int}-10)" disabled="true" style="width: 3em"/>
+                  <button type="roll" name="roll_int" value="&{template:default} {{name=Intellect}} {{roll= [[1d20+@{intMod}+(?{+b/-b|}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                </div>
+                <div class="f-row nowrap">
+                  <label>Will</label>
+                  <input type="number" name="attr_wil" value="10" style="width: 4.5em">
+                  <input type="roll" name="attr_wilMod" value="(@{wil}-10)" disabled="true" style="width: 3em"/>
+                  <button type="roll" name="roll_wil" value="&{template:default} {{name=Will}} {{roll= [[1d20+@{wilMod}+(?{+b/-b|}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                </div>
+                <div class="f-row nowrap">
+                    <label>Luck</label>
+                    <button type="roll" name="roll_luck" value="&{template:Default} {{name=Luck}} {{roll= [[1d20]]}}"></button>
+                </div>
+              </section>
+              
+              <section class="defence f-col nowrap">
+                
+                <div class="f-row">
+                  <label>Health</label>
+                  <input type="number" name="attr_HealthC" value="" style="width: 4em"/>
+                  <b>/</b>
+                  <input type="number" name="attr_HealthM" value="" style="width: 4em"/>
+                </div>
+                <div class="f-row nowrap">
+                  <label>Damage</label>
+                  <input type="number" name="attr_DamageC" value="" style="width: 4em"/>
+                </div>
+                <div class="f-row nowrap">
+                  <label>Natural Defence</label>
+                  <input type="number" name="attr_nDefence" value="" style="width: 4em">
+                </div>
+                <div class="f-row nowrap">
+                  <label>Armored Defence</label>
+                  <input type="number" name="attr_aDefence" value="" style="width: 4em">
+                </div>
+                <div class="f-row nowrap">
+                  <label>Bonus Damage</label>
+                  <input type="number" name="attr_Bonus" value="" style="width: 4em">
+                </div>
+                <div class="f-row nowrap">
+                 <label>Injured<input type="checkbox" name="attr_Injured" value=""></label>
+                 <label>Incapacitated<input type="checkbox" name="attr_Incapacitated" value=""></label>
+                </div>
+              </section>
+                
+            
+                
+                
+                
+                
+                
+              <section class="power f-col">
+                  <img style="center" src='https://raw.githubusercontent.com/karifaevt/communitysotwwR20Sheet/Assets/logo.png'>
+                <h4>Background, Description, & Professions</h4>
+                    <div class="f-row nowrap">
+                        <input type="text" name="attr_lang" value="Known Languages">
+                        <button type="roll" name="roll_lang" value="&{template:default} {{name=Languages}} {{= @{lang} }}"></button>
+                    </div>
+                <fieldset class="repeating_power">
+                    <input name="attr_power" type="text" value="Profession" >
+                </fieldset>
+                <textarea type="text" name="attr_description" value="" style="max-width:95%;min-width:95%;max-height:270px;min-height:90px"/> 
+              </section>
+            
+              <section class="attack">
+                <input type="text" name="attr_atk1" value="" style="width: 8em"><input type="text" name="attr_prop1" value="weapon traits" style="width: 16em"><input type="number" name="attr_dmg1">d6
+                <select name="attr_drop1" style="width: 6em">
+                        <option value="(@{strMod})">Strength</option>
+                        <option value="(@{agiMod})">Agility</option>
+                        <option value="(@{intMod})">Intellect</option>
+                        <option value="(@{wilMod})">Will</option>
+                </select>
+                <button type="roll" name="roll_atk1" value="&{template:default} {{name=@{atk1}}} {{To Hit= [[1d20+@{drop1}+(?{+b/-b|}d6kh1)]]}} {{damage=[[(@{dmg1}d6)+(?{Bonus|}d6)]]}} {{traits=@{prop1}}}"> </button>
+                
+                <input type="text" name="attr_atk2" value="" style="width: 8em"><input type="text" name="attr_prop2" value="weapon traits" style="width: 16em"><input type="number" name="attr_dmg2">d6
+                <select name="attr_drop2" style="width: 6em">
+                        <option value="(@{strMod})">Strength</option>
+                        <option value="(@{agiMod})">Agility</option>
+                        <option value="(@{intMod})">Intellect</option>
+                        <option value="(@{wilMod})">Will</option>
+                </select>
+                <button type="roll" name="roll_atk2" value="&{template:default} {{name=@{atk2}}} {{To Hit= [[1d20+@{drop2}+(?{+b/-b|}d6kh1)]]}} {{damage=[[(@{dmg2}d6)+(?{Bonus|}d6)]]}} {{traits=@{prop2}}}"> </button>
+            
+                <input type="text" name="attr_atk3" value="" style="width: 8em"><input type="text" name="attr_prop3" value="weapon traits" style="width: 16em"><input type="number" name="attr_dmg3">d6
+                <select name="attr_drop3" style="width: 6em">
+                        <option value="(@{strMod})">Strength</option>
+                        <option value="(@{agiMod})">Agility</option>
+                        <option value="(@{intMod})">Intellect</option>
+                        <option value="(@{wilMod})">Will</option>
+                </select>
+                <button type="roll" name="roll_atk3" value="&{template:default} {{name=@{atk3}}} {{To Hit= [[1d20+@{drop3}+(?{+b/-b|}d6kh1)]]}} {{damage=[[(@{dmg3}d6)+(?{Bonus|}d6)]]}} {{traits=@{prop3}}}"> </button>
+                
+                <input type="text" name="attr_atk4" value="" style="width: 8em"><input type="text" name="attr_prop4" value="weapon traits" style="width: 16em"><input type="number" name="attr_dmg4">d6
+                <select name="attr_drop4" style="width: 6em">
+                        <option value="(@{strMod})">Strength</option>
+                        <option value="(@{agiMod})">Agility</option>
+                        <option value="(@{intMod})">Intellect</option>
+                        <option value="(@{wilMod})">Will</option>
+                </select>
+                <button type="roll" name="roll_atk4" value="&{template:default} {{name=@{atk4}}} {{To Hit= [[1d20+@{drop4}+(?{+b/-b|}d6kh1)]]}} {{damage=[[(@{dmg4}d6)+(?{Bonus|}d6)]]}} {{traits=@{prop4}}}"> </button>
+                
+                <input type="text" name="attr_atk5" value="" style="width: 8em"><input type="text" name="attr_prop5" value="weapon traits" style="width: 16em"><input type="number" name="attr_dmg5">d6
+                <select name="attr_drop5" style="width: 6em">
+                        <option value="(@{strMod})">Strength</option>
+                        <option value="(@{agiMod})">Agility</option>
+                        <option value="(@{intMod})">Intellect</option>
+                        <option value="(@{wilMod})">Will</option>
+                </select>
+                <button type="roll" name="roll_atk5" value="&{template:default} {{name=@{atk5}}} {{To Hit= [[1d20+@{drop5}+(?{+b/-b|}d6kh1)]]}} {{damage=[[(@{dmg5}d6)+(?{Bonus|}d6)]]}} {{traits=@{prop5}}}"> </button>
+                
+                <input type="text" name="attr_atk6" value="" style="width: 8em"><input type="text" name="attr_prop6" value="weapon traits" style="width: 16em"><input type="number" name="attr_dmg6">d6
+                <select name="attr_drop6" style="width: 6em">
+                        <option value="(@{strMod})">Strength</option>
+                        <option value="(@{agiMod})">Agility</option>
+                        <option value="(@{intMod})">Intellect</option>
+                        <option value="(@{wilMod})">Will</option>
+                </select>
+                <button type="roll" name="roll_atk6" value="&{template:default} {{name=@{atk6}}} {{To Hit= [[1d20+@{drop6}+(?{+b/-b|}d6kh1)]]}} {{damage=[[(@{dmg6}d6)+(?{Bonus|}d6)]]}} {{traits=@{prop6}}}"> </button>
+              
+              
+              </section>
+            
+              <section class="inv">
+                <label>Coins:  Cp<input type="number" style="width: 8em">Sp<input type="number" style="width: 8em">Gp<input type="number" style="width: 8em"></label>
+                <textarea name="attr_inventory" style="max-width:95%;min-width:95%;max-height:200px;min-height:200px"></textarea>
+              </section>
+        </main>
+ 
+    </span>
+</div>
+
+<!--- Page 2 Spells --->
+<div class="sheet-magic">
+        <span>
+            <div class="sheet-3colrow">
+                                <h3>Known Traditions</h3>
+                            <div class="sheet-col">
+                                <input type="text" name="atr_trad1" style="width: 20em">
+                                <div class="sheet-row"><input type="text" name="atr_trad2" style="width: 20em"></div>
+                                    <br>
+                                    <div class="sheet-row"><h4>Magical Talents</h4></div>
+<!----------------------------------Talent Descriptions---------------------------------->
+                                   
+                                   <!--- Talent 1 --->
+                                   <br>
+                                    <div class="sheet-row">
+                                        <input type="text" name="attr_tal1" style="width: 20em; font-size:8pt"><button type="roll" name="roll_tal1" value="&{template:default}{{name=@{tal1}}}{{=@{taldesc1}}}"></button>
+                                    </div>
+                                    <div class="sheet-row">
+                                        <div>
+                                            <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show<input type="text" name="attr_tal1c" style="height:16px;width:20px;font-size:14px">/<input name="attr_tal1c2" type="text" style="height:16px;width:20px;font-size:14px"></span>
+                                                <div class="sheet-body">
+                                                    <textarea name="attr_taldesc1" style="min-width:24em;max-width: 24em;font-size:8pt"></textarea>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--- Talent 2 --->
+                                    <br>
+                                    
+                                    <div class="sheet-row">
+                                        <input type="text" name="attr_tal2" style="width: 20em; font-size:8pt"><button type="roll" name="roll_tal2" value="&{template:default}{{name=@{tal2}}}{{=@{taldesc2}}}"></button>
+                                    </div>
+                                    <div class="sheet-row">
+                                        <div>
+                                            <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show<input type="text" name="attr_tal2c1"style="height:16px;width:20px;font-size:14px">/<input type="text" name="attr_tal2c2"style="height:16px;width:20px;font-size:14px"></span>
+                                                <div class="sheet-body">
+                                                    <textarea name="attr_taldesc2" style="min-width:24em;max-width:24em;font-size:8pt"></textarea>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--- Talent 3 --->
+                                    <br>
+                                    
+                                    <div class="sheet-row">
+                                        <input type="text" name="attr_tal3" style="width:20em;font-size:8pt"><button type="roll" name="roll_tal3" value="&{tempalte:default {{name=@{tal3}}}{{=@{taldesc3}}}"></button>
+                                    </div>
+                                    
+                                    <div class="sheet-row">
+                                        <div>
+                                            <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show<input type="text" name="attr_tal3c" style="height:16px;width:20px;font-size:14px">/<input type="text" name="attr_tal3c2" style="height:16px;width:20px;font-size:14px"></span>
+                                                <div class="sheet-body">
+                                                    <textarea name="attr_taldesc3" style="min-width:24em;max-width: 24em;font-size:8pt"></textarea>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--- Talent 4 --->
+                                    
+                                    <br>
+                                    
+                                    <div class="sheet-row">
+                                        <input type="text" name="attr_tal4" style="width:20em;font-size:8pt"><button type="roll" name="roll_tal4" value="&{tempalte:default {{name=@{tal4}}}{{=@{taldesc4}}}"></button>
+                                    </div>
+                                    
+                                    <div class="sheet-row">
+                                        <div>
+                                            <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_tal4c" style="height:16px;width:20px;font-size:14px">/<input type="text" name="attr_tal4c2" style="height:16px;width:20px;font-size:14px"></span>
+                                                <div class="sheet-body">
+                                                    <textarea name="attr_taldesc4" style="min-width:24em;max-width: 24em;font-size:8pt"></textarea>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--- Talent Freeform --->
+                                    <br>
+                                    
+                                    <div class="sheet-row">
+                                        <textarea name="attr_taldesc5" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                    </div>
+                            </div>
+                            
+
+                            
+                            <div class="sheet-col">
+                                <input type="text" name="atr_trad3" style="width: 20em">
+                                <div class="sheet-row">
+                                    <input type="text" name="atr_trad4" style="width: 20em">
+                                </div>
+                                
+<!--------------------------------Spell Attacks ------------------------------->
+                                <div class="sheet-row"></div>
+                                <br>
+                                <h4>Attack Spells</h4>
+                                <br>
+                            <!--- Attack Spell 1 --->
+                                <div class="sheet-row">
+                                    <input type="text" name="attr_aspl1" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_aspl1" value= "&{template:default}{{name=@{aspl1}}}{{Target=@{aspl1T}}}{{Duration=@{aspl1D}}}{{Roll=[[1d20+(@{aspl1M})+(?{+B/-b|}d6kh1)]]}}{{Against=@{aspl1A}}}{{Damage=[[(@{aspl1Da})d6]]}}{{=@{aspl1desc}}}"></button>
+                                </div>
+                            
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_aspl1c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_aspl1c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_aspl1T" value="Target">
+                                                    <input type="text" name="attr_aspl1D" value="Duration">
+                                                    <select name="attr_aspl1M">
+                                                        <option value="(@{intMod})">Intellect</option>
+                                                        <option value="(@{wilMod})">Will</option>
+                                                    </select>
+                                                    <select name="attr_aspl1A">
+                                                        <option value="Defense">Defense</option>
+                                                        <option value="Strength">Strength</option>
+                                                        <option value="Agility">Agility</option>
+                                                        <option value="Intellect">Intellect</option>
+                                                        <option value="Will">Will</option>
+                                                    </select>
+                                                    <input type="number" name="attr_aspl1Da" style="width:12em"><b>d6 damage</b>
+                                                    <textarea name="attr_aspl1desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Attack Spell 2 --->
+                            <br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_aspl2" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_aspl2" value= "&{template:default}{{name=@{aspl2}}}{{Target=@{aspl2T}}}{{Duration=@{aspl2D}}}{{Roll=[[1d20+(@{aspl2M})+(?{+B/-b|}d6kh1)]]}}{{Against=@{aspl2A}}}{{Damage=[[(@{aspl2Da})d6]]}}{{=@{aspl2desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_aspl2c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_aspl2c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_aspl2T" value="Target">
+                                                    <input type="text" name="attr_aspl2D" value="Duration">
+                                                    <select name="attr_aspl2M">
+                                                        <option value="(@{intMod})">Intellect</option>
+                                                        <option value="(@{wilMod})">Will</option>
+                                                    </select>
+                                                    <select name="attr_aspl2A">
+                                                        <option value="Defense">Defense</option>
+                                                        <option value="Strength">Strength</option>
+                                                        <option value="Agility">Agility</option>
+                                                        <option value="Intellect">Intellect</option>
+                                                        <option value="Will">Will</option>
+                                                    </select>
+                                                    <input type="number" name="attr_aspl2Da" style="width:12em"><b>d6 damage</b>
+                                                    <textarea name="attr_aspl2desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Attack Spell 3 --->
+                            <br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_aspl3" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_aspl3" value= "&{template:default}{{name=@{aspl3}}}{{Target=@{aspl3T}}}{{Duration=@{aspl3D}}}{{Roll=[[1d20+(@{aspl3M})+(?{+B/-b|}d6kh1)]]}}{{Against=@{aspl3A}}}{{Damage=[[(@{aspl3Da})d6]]}}{{=@{aspl3desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_aspl3c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_aspl3c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_aspl3T" value="Target">
+                                                    <input type="text" name="attr_aspl3D" value="Duration">
+                                                    <select name="attr_aspl3M">
+                                                        <option value="(@{intMod})">Intellect</option>
+                                                        <option value="(@{wilMod})">Will</option>
+                                                    </select>
+                                                    <select name="attr_aspl3A">
+                                                        <option value="Defense">Defense</option>
+                                                        <option value="Strength">Strength</option>
+                                                        <option value="Agility">Agility</option>
+                                                        <option value="Intellect">Intellect</option>
+                                                        <option value="Will">Will</option>
+                                                    </select>
+                                                    <input type="number" name="attr_aspl3Da" style="width:12em"><b>d6 Damage</b>
+                                                    <textarea name="attr_aspl3desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Attack Spell 4 ---->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_aspl4" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_aspl4" value= "&{template:default}{{name=@{aspl4}}}{{Target=@{aspl4T}}}{{Duration=@{aspl4D}}}{{Roll=[[1d20+(@{aspl4M})+(?{+B/-b|}d6kh1)]]}}{{Against=@{aspl4A}}}{{Damage=[[(@{aspl4Da})d6]]}}{{=@{aspl4desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_aspl4c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_aspl4c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_aspl4T" value="Target">
+                                                    <input type="text" name="attr_aspl4D" value="Duration">
+                                                    <select name="attr_aspl4M">
+                                                        <option value="(@{intMod})">Intellect</option>
+                                                        <option value="(@{wilMod})">Will</option>
+                                                    </select>
+                                                    <select name="attr_aspl4A">
+                                                        <option value="Defense">Defense</option>
+                                                        <option value="Strength">Strength</option>
+                                                        <option value="Agility">Agility</option>
+                                                        <option value="Intellect">Intellect</option>
+                                                        <option value="Will">Will</option>
+                                                    </select>
+                                                    <input type="number" name="attr_aspl4Da" style="width:12em"><b>d6 Damage</b>
+                                                    <textarea name="attr_aspl4desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Attack Spell 5--->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_aspl5" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_aspl5" value= "&{template:default}{{name=@{aspl5}}}{{Target=@{aspl5T}}}{{Duration=@{aspl5D}}}{{Roll=[[1d20+(@{aspl5M})+(?{+B/-b|}d6kh1)]]}}{{Against=@{aspl5A}}}{{Damage=[[(@{aspl5Da})d6]]}}{{=@{aspl5desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_aspl5c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_aspl5c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_aspl5T" value="Target">
+                                                    <input type="text" name="attr_aspl5D" value="Duration">
+                                                    <select name="attr_aspl5M">
+                                                        <option value="(@{intMod})">Intellect</option>
+                                                        <option value="(@{wilMod})">Will</option>
+                                                    </select>
+                                                    <select name="attr_aspl5A">
+                                                        <option value="Defense">Defense</option>
+                                                        <option value="Strength">Strength</option>
+                                                        <option value="Agility">Agility</option>
+                                                        <option value="Intellect">Intellect</option>
+                                                        <option value="Will">Will</option>
+                                                    </select>
+                                                    <input type="number" name="attr_aspl5Da" style="width:12em"><b>d6 Damage</b>
+                                                    <textarea name="attr_aspl5desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!---Attack Spell 6--->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_aspl6" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_aspl6" value= "&{template:default}{{name=@{aspl6}}}{{Target=@{aspl6T}}}{{Duration=@{aspl6D}}}{{Roll=[[1d20+(@{aspl6M})+(?{+B/-b|}d6kh1)]]}}{{Against=@{aspl6A}}}{{Damage=[[(@{aspl6Da})d6]]}}{{=@{aspl6desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_aspl6c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_aspl6c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_aspl6T" value="Target">
+                                                    <input type="text" name="attr_aspl6D" value="Duration">
+                                                    <select name="attr_aspl6M">
+                                                        <option value="(@{intMod})">Intellect</option>
+                                                        <option value="(@{wilMod})">Will</option>
+                                                    </select>
+                                                    <select name="attr_aspl6A">
+                                                        <option value="Defense">Defense</option>
+                                                        <option value="Strength">Strength</option>
+                                                        <option value="Agility">Agility</option>
+                                                        <option value="Intellect">Intellect</option>
+                                                        <option value="Will">Will</option>
+                                                    </select>
+                                                    <input type="number" name="attr_aspl6Da" style="width:12em"><b>d6 Damage</b>
+                                                    <textarea name="attr_aspl6desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="sheet-col">
+                                <input type="text" name="atr_trad5" style="width: 20em">
+                                <div class="sheet-row">
+                                    <input type="text" name="atr_trad6" style="width: 20em">
+                                </div>
+                                <br>
+                                <div class="sheet-row"><h4>Other Spells</h4></div>
+                            <!--- Spell 1--->
+                            <br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_spl1" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_spl1" value= "&{template:default}{{name=@{spl1}}}{{Target=@{spl1T}}}{{Duration=@{spl1D}}}{{=@{spl1desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_spl1c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_spl1c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_spl1T" value="Target">
+                                                    <input type="text" name="attr_spl1D" value="Duration">
+                                                    <textarea name="attr_spl1desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Spell 2 --->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_spl2" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_spl2" value= "&{template:default}{{name=@{spl2}}}{{Target=@{spl2T}}}{{Duration=@{spl2D}}}{{=@{spl2desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_spl2c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_spl2c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_spl2T" value="Target">
+                                                    <input type="text" name="attr_spl2D" value="Duration">
+                                                    <textarea name="attr_spl2desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!----Spell 3 ---->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_spl3" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_spl3" value= "&{template:default}{{name=@{spl3}}}{{Target=@{spl3T}}}{{Duration=@{spl3D}}}{{=@{spl3desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_spl3c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_spl3c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_spl3T" value="Target">
+                                                    <input type="text" name="attr_spl3D" value="Duration">
+                                                    <textarea name="attr_spl3desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- SPell 4--->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_spl4" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_spl4" value= "&{template:default}{{name=@{spl4}}}{{Target=@{spl4T}}}{{Duration=@{spl4D}}}{{=@{spl4desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_spl4c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_spl4c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_spl4T" value="Target">
+                                                    <input type="text" name="attr_spl4D" value="Duration">
+                                                    <textarea name="attr_spl4desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Spell 5 --->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_spl5" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_spl5" value= "&{template:default}{{name=@{spl5}}}{{Target=@{spl5T}}}{{Duration=@{spl5D}}}{{=@{spl5desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_spl5c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_spl5c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_spl5T" value="Target">
+                                                    <input type="text" name="attr_spl5D" value="Duration">
+                                                    <textarea name="attr_spl5desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            <!--- Spell 6 --->
+                            								<br>
+								<div class="sheet-row">
+                                    <input type="text" name="attr_spl6" style="width:20em;font-size:8pt">
+                                    <button type="roll" name="roll_spl6" value= "&{template:default}{{name=@{spl6}}}{{Target=@{spl6T}}}{{Duration=@{spl6D}}}{{=@{spl6desc}}}"></button>
+                                </div>
+                                <div class="sheet-row">
+                                    <div>
+                                        <input type="checkbox" class="sheet-toggle-show"/>
+                                                <span>Show <input type="text" name="attr_spl6c"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_spl6c2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+                                                <div class="sheet-body">
+                                                    <input type="text" name="attr_spl6T" value="Target">
+                                                    <input type="text" name="attr_spl6D" value="Duration">
+                                                    <textarea name="attr_spl6desc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
+                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+        </span>
+</div>
+
+
+<!----------------------------------------------------------- NOTES --------------------------------------------------------------->
+<div class="sheet-notes">
+    <span>
+        <div class="sheet-2colrow">
+            <div class="sheet-col">
+                <textarea style="min-width:100%;max-width:100%;min-height:900px;max-height:900px"></textarea>
+            </div>
+            <div class="sheet-col">
+                <textarea style="min-width:100%;max-width:100%;min-height:900px;max-height:900px"></textarea>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+    </span>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- Button Worker --->
+<script type="text/worker">
+    const buttonlist = ["character", "magic", "notes"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>
