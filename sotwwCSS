@@ -14,7 +14,8 @@ main {
                       "common  skill   defence  power"
                       "common  attack  attack   power"
                       "common  inv     inv      power"
-                      "common  inv    inv     power";
+                      "common  inv     inv     power";
+
 }
 
 
@@ -143,65 +144,157 @@ section {
   background-color: #F1F1F1;
 }
 
-/*  ------------------spell css--------------------------- */
-
-
-/*magic {
-  display: grid;
-  width: 1076px;
-  height: 900px;
-  grid-gap: 0px;
-  grid-template-columns: 269px 1fr 1fr 1fr;
-  grid-template-rows: 90px 1fr 1fr 1fr 20px;
-  grid-template-areas:"header  header  header   power"
-                      "common  skill   defence  power"
-                      "common  attack  attack   power"
-                      "common  inv     inv      power"
-                      "common  inv    inv     power";
-}
-
-
-
-/*{
-  display: grid;
-  width: 1076px;
-  height: 900px;
-  grid-gap: 0px;
-  grid-template-columns: 269px 1fr 1fr 1fr;
-  grid-template-rows: 90px 1fr 1fr 1fr 20px;
-  grid-template-areas: 
-  "tradh tradh tradh tradh"
-  "trads trads trads trads"
-  "tal1  inv inv inv"
-  "tal1 notes notes ntoes";
-}
-*/
-.tradh {
-  grid-area: tradh;
-  background-color: #DBD3DC;
-  justify-content: space-evenly;
-}
-
-.trads {
-    grid-area: trads;
-    background-color: #DBD3DC;
-    justify-content: space-evenly;
-}
-.notes {
-  grid-area: notes;
-  background-color: #DBD3DC;
-  justify-content: space-evenly;
-}
-
-.tal1 {
-    grid-area: tal1;
+.magic {
     background-color: #F1F1F1;
 }
 
-.inv2 {
-  grid-area: inv;
+.notes {
   background-color: #F1F1F1;
 }
+
+.power .repcontainer[data-groupname="repeating_spellAttack"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_spellAttack"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_spellCard"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_spellCard"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_magicTalent"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_magicTalent"] .repitem{
+  margin: 4px 0px;
+}
+
+.magic .magicSub {
+	background-color: #DBD3DC;
+	align-items: center;
+	
+}
+
+.power .repcontainer[data-groupname="repeating_Ancestry"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_Ancestry"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_Novice"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_Novice"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_Expert"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_Expert"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_Master"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_Master"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_Attack"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_Attack"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_Notes"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_Notes"] .repitem{
+  margin: 4px 0px;
+}
+
+.mainSub {
+	background-color: #D3D3D3;
+}
+/*---------------------------------------- NPC STYLING ------------------------------*/
+
+.npc {
+  background-color: #F1F1F1;
+}
+
+.npc .npcName {
+	background-color: #48234f;
+	align-items: center;
+}
+
+.npc .npcType {
+	background-color: #DBD3DC;
+	align-items: center;
+	
+}
+.npc .npcSub {
+	background-color: #D3D3D3;
+}
+
+.power .repcontainer[data-groupname="repeating_npcTalent"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_npcTalent"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_npcAction"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_npcAction"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_npcReaction"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_npcReaction"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_npcSpell"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_npcSpell"] .repitem{
+  margin: 4px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*------------------------------------*\
@@ -259,7 +352,8 @@ section {
 /* configure the tab buttons */
 .charsheet .sheet-character,
 .charsheet .sheet-magic,
-.charsheet .sheet-notes {
+.charsheet .sheet-notes,
+.charsheet .sheet-npc {
     display: none;
 }
 
@@ -267,11 +361,13 @@ section {
 .charsheet .sheet-tabstoggle[value="character"] ~ div .sheet-button0 {outline: 2px solid purple;}
 .charsheet .sheet-tabstoggle[value="magic"] ~ div .sheet-button1 {outline: 2px solid purple;}
 .charsheet .sheet-tabstoggle[value="notes"] ~ div .sheet-button2 {outline: 2px solid purple;}
+.charsheet .sheet-tabstoggle[value="npc"] ~ div .sheet-button3 {outline: 2px solid purple;}
 
 /* show the selected tab */
 .charsheet .sheet-tabstoggle[value="character"] ~ div.sheet-character,
 .charsheet .sheet-tabstoggle[value="magic"] ~ div.sheet-magic,
-.charsheet .sheet-tabstoggle[value="notes"] ~ div.sheet-notes {
+.charsheet .sheet-tabstoggle[value="notes"] ~ div.sheet-notes,
+.charsheet .sheet-tabstoggle[value="npc"] ~ div.sheet-npc {
     display: block;
 }
 
