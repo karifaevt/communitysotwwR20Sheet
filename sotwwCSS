@@ -83,7 +83,7 @@ section {
 
 .header {
   grid-area: header;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
   flex-direction: column;
 }
 
@@ -96,24 +96,25 @@ section {
 
 .skill {
   grid-area: skill;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
   justify-content: space-evenly;
 }
 
 .defence {
   grid-area: defence;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
   justify-content: space-evenly;
 }
 
 .common {
   grid-area: common;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
 }
 
 .power {
   grid-area: power;
   background-color: #DBD3DC;
+  flex-direction: column;
 }
 
 .power .repcontainer[data-groupname="repeating_power"]{
@@ -126,30 +127,30 @@ section {
 
 .attack {
   grid-area: attack;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
 }
 
 .inv {
   grid-area: inv;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
 }
 
 .misc {
   grid-area: misc;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
 }
 
 .footer {
   grid-area: footer;
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
 }
 
 .magic {
-    background-color: #F1F1F1;
+    background-color: #f5f6fa;
 }
 
 .notes {
-  background-color: #F1F1F1;
+  background-color: #f5f6fa;
 }
 
 .power .repcontainer[data-groupname="repeating_spellAttack"]{
@@ -173,6 +174,14 @@ section {
 }
 
 .power .repcontainer[data-groupname="repeating_magicTalent"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_ExtraDamage"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_ExtraDamage"] .repitem{
   margin: 4px 0px;
 }
 
