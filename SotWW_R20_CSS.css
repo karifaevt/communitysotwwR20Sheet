@@ -177,6 +177,14 @@ section {
   margin: 4px 0px;
 }
 
+.power .repcontainer[data-groupname="repeating_ExtraDamage"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_ExtraDamage"] .repitem{
+  margin: 4px 0px;
+}
+
 .magic .magicSub {
 	background-color: #DBD3DC;
 	align-items: center;
