@@ -14,7 +14,7 @@ main {
                       "common  skill   defence  power"
                       "common  attack  attack   power"
                       "common  inv     inv      power"
-                      "common  inv     inv     power";
+                      "common  inv     inv      power";
 
 }
 
@@ -147,10 +147,12 @@ section {
 
 .magic {
     background-color: #f5f6fa;
+    width: 860px;
 }
 
 .notes {
   background-color: #f5f6fa;
+  width: 860px;
 }
 
 .power .repcontainer[data-groupname="repeating_spellAttack"]{
@@ -242,10 +244,16 @@ section {
 .mainSub {
 	background-color: #D3D3D3;
 }
+
+.detailDropdown {
+    background-color: #DBD3DC;
+}
 /*---------------------------------------- NPC STYLING ------------------------------*/
 
 .npc {
   background-color: #F1F1F1;
+  display: inline-block;
+  width: 860px;
 }
 
 .npc .npcName {
@@ -275,6 +283,14 @@ section {
 }
 
 .power .repcontainer[data-groupname="repeating_npcAction"] .repitem{
+  margin: 4px 0px;
+}
+
+.power .repcontainer[data-groupname="repeating_npcOther"]{
+  padding-bottom: 0.2em;
+}
+
+.power .repcontainer[data-groupname="repeating_npcOther"] .repitem{
   margin: 4px 0px;
 }
 
