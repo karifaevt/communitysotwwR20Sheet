@@ -17,7 +17,7 @@
 <div class="sheet-character">
     <span>
         <main>
-              <section class="header f-center">
+          <section class="header f-center">
             
                 <div class="sheet-4colrow">
                     <div class="sheet-col">
@@ -40,27 +40,28 @@
               </section>
             
               <section class="common f-col">
+                 
                     <label>Ancestry</label><input name="attr_ancestry" type="text" value="" >
                     
 						<div>
 							<input type="checkbox" class="sheet-toggle-show"/>
-								<span>show ancestry traits</span>
+								<span><b>show ancestry traits</b></span>
 								<div class="sheet-body">
 								<fieldset class="repeating_Ancestry">
 									
 										<input type="text" name="attr_ancTraitName"><button type="roll" name="roll_ancTraitName" value="&{template:default} {{name=@{ancTraitName}}} {{=@{anctraits}}}"></button>
-										<textarea style="max-width: 80%; min-width:80%;min-height:100px;font-size:8pt" name="attr_anctraits" value=""></textarea>
+										<textarea style="max-width: 95%; min-width:95%;min-height:45px;font-size:8pt" name="attr_anctraits" value=""></textarea>
 								</fieldset>
 								</div>
 						</div>
                     <label>Novice Path:</label><input name="attr_novice" type="text" value="">       
 						<div>
 							<input type="checkbox" class="sheet-toggle-show"/>
-								<span>show novice path talents</span>
+								<span><b>show novice path talents</b></span>
 									<div class="sheet-body">
 										<fieldset class="repeating_Novice">
 										<input type="text" name="attr_NoviceTalentName"><button type="roll" name="roll_NoviceTalents" value="&{template:default}{{name=@{NoviceTalentName}}}{{=@{NoviceTalents}}}"></button>
-										<textarea style="max-width: 95%; min-width:95%;min-height:100px;font-size:8pt" name="attr_NoviceTalents" value="Talents"></textarea>
+										<textarea style="max-width: 95%; min-width:95%;min-height:45px;font-size:8pt" name="attr_NoviceTalents" value="Talents"></textarea>
 										</fieldset>
 									</div>
 						</div>
@@ -68,11 +69,11 @@
                     
 						<div>
 							<input type="checkbox" class="sheet-toggle-show"/>
-								<span>show expert path talents</span>
+								<span><b>show expert path talents</b></span>
 									<div class="sheet-body">
 										<fieldset class="repeating_Expert">
 										<input type="text" name="attr_ExpertTalentName"><button type="roll" name="roll_ExpertTalents" value="&{template:default}{{name=@{ExpertTalentName}}}{{=@{ExpertTalents}}}"></button>
-										<textarea style="max-width: 95%; min-width:95%;min-height:100px;font-size:8pt" name="attr_ExpertTalents" value="Talents"></textarea>
+										<textarea style="max-width: 95%; min-width:95%;min-height:45px;font-size:8pt" name="attr_ExpertTalents" value="Talents"></textarea>
 										</fieldset>
 									</div>
 						</div>
@@ -80,7 +81,7 @@
                     
 						<div>
 							<input type="checkbox" class="sheet-toggle-show"/>
-								<span>show master path talents</span>
+								<span><b>show master path talents</b></span>
 									<div class="sheet-body">
 									<fieldset class="repeating_Master"><button type="roll" name="roll_MasterTalents" value="&{template:default}{{name=@{MasterTalentName}}}{{=@{MasterTalents}}}"></button>
 										<input type="text" name="attr_MasterTalentName">
@@ -88,6 +89,7 @@
 										</fieldset>
 									</div>
 						</div>
+				
 			 </section>
             
               <section class="skill f-col nowrap">
@@ -97,29 +99,29 @@
                   <label>Strength</label>
                   <input type="number" name="attr_str" value="10" style="width: 4em">
                   <input type="number" name="attr_strMod" value="(@{str}-10)" disabled="true" style="width: 3em"/>
-                  <button type="roll" name="roll_str" value="&{template:default} {{name=Strength}} {{roll= [[1d20+@{strMod}+(?{+B/-b|0}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                  <button type="roll" name="roll_str" value="&{template:default} {{name=Strength}} {{roll= [[1d20+@{strMod}?{+Boon/-Bane|+0}d6kh1]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
                 </div>
                 <div class="f-row nowrap">
                   <label>Agility</label>
                   <input type="number" name="attr_agi" value="10" style="width: 4em">
                   <input type="number" name="attr_agiMod" value="(@{agi}-10)" disabled="true" style="width: 3em"/>
-                  <button type="roll" name="roll_agi" value="&{template:default} {{name=Agility}} {{roll= [[1d20+@{agiMod}+(?{+B/-b|0}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                  <button type="roll" name="roll_agi" value="&{template:default} {{name=Agility}} {{roll= [[1d20+@{agiMod}?{+Boon/-Bane|+0}d6kh1]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
                 </div>
                 <div class="f-row nowrap">
                   <label>Intellect</label>
                   <input type="number" name="attr_int" value="10" style="width: 4.5em">
                   <input type="roll" name="attr_intMod" value="(@{int}-10)" disabled="true" style="width: 3em"/>
-                  <button type="roll" name="roll_int" value="&{template:default} {{name=Intellect}} {{roll= [[1d20+@{intMod}+(?{+B/-b|0}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                  <button type="roll" name="roll_int" value="&{template:default} {{name=Intellect}} {{roll= [[1d20+@{intMod}?{+Boon/-Bane|+0}d6kh1]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
                 </div>
                 <div class="f-row nowrap">
                   <label>Will</label>
                   <input type="number" name="attr_wil" value="10" style="width: 4.5em">
                   <input type="roll" name="attr_wilMod" value="(@{wil}-10)" disabled="true" style="width: 3em"/>
-                  <button type="roll" name="roll_wil" value="&{template:default} {{name=Will}} {{roll= [[1d20+@{wilMod}+(?{+B/-b|0}d6kh1)]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
+                  <button type="roll" name="roll_wil" value="&{template:default} {{name=Will}} {{roll= [[1d20+@{wilMod}?{+Boon/-Bane|+0}d6kh1]]}} {{against= ?{Target Ability|Test|Defence|Strength|Agility|Intellect|Will}}}"> </button>
                 </div>
                 <div class="f-row nowrap">
                     <label>Luck</label>
-                    <button type="roll" name="roll_luck" value="&{template:Default} {{name=Luck}} {{roll= [[1d20]]}}"></button>
+                    <button type="roll" name="roll_luck" value="&{template:default} {{name=Luck}} {{roll= [[1d20]]}}"></button>
                 </div>
               </section>
               
@@ -148,8 +150,7 @@
                   <input type="number" name="attr_Bonus" value="" style="width: 4em">
                 </div>
                 <div class="f-row nowrap">
-                 <label>Injured<input type="checkbox" name="attr_Injured" value=""></label>
-                 <label>Incapacitated<input type="checkbox" name="attr_Incapacitated" value=""></label>
+                 <label style="font-size:10pt">Injured<input type="checkbox" name="attr_Injured"></label><label style="font-size:10pt">Incapacitated<input type="checkbox" name="attr_Incapacitated"></label>
                 </div>
               </section>
                 
@@ -159,17 +160,22 @@
                 
                 
                 
-              <section class="power f-col">
-                  <img style="center" src='https://raw.githubusercontent.com/karifaevt/communitysotwwR20Sheet/Assets/logo.png'>
-                <h4>Background, Description, & Professions</h4>
+              <section class="power">
+                  <img style="center;max-height:250px;max-width:159px" src='https://raw.githubusercontent.com/karifaevt/communitysotwwR20Sheet/Assets/logo.png'>
+                    <br>
+                    <div class="mainSub"><h4>Languages</h4></div>
                     <div class="f-row nowrap">
-                        <input type="text" name="attr_lang" value="Known Languages">
+                        <input type="text" name="attr_lang" value="Common">
                         <button type="roll" name="roll_lang" value="&{template:default} {{name=Languages}} {{= @{lang} }}"></button>
                     </div>
+                    <br>
+                    <div class="mainSub"><h4>Professions</h4></div>
                 <fieldset class="repeating_power">
                     <input name="attr_power" type="text" value="Profession" >
                 </fieldset>
-                <textarea type="text" name="attr_description" value="" style="max-width:95%;min-width:95%;max-height:270px;min-height:90px"/> 
+                <br>
+                <div class="mainSub"><h4>Description</h4></div>
+                <textarea type="text" name="attr_description" value="" style="max-width:240px;min-width:240px;min-height:90px;max-height:550px;font-size:10pt"/> 
               </section>
             <!--- ATTACKS--->
               <section class="attack">
@@ -184,8 +190,16 @@
                         <option value="(@{intMod})">Intellect</option>
                         <option value="(@{wilMod})">Will</option>
                 </select>
-                <button type="roll" name="roll_atk1" value="&{template:default} {{name=@{atk1}}} {{To Hit= [[1d20+@{drop1}+(?{+B/-b|0}d6kh1)]]}} {{damage=[[(@{dmg1}d6)+(?{Bonus|0}d6)]]}} {{traits=@{prop1}}}"> </button>
+                <button type="roll" name="roll_atk1" value="&{template:default} {{name=@{atk1}}} {{To Hit= [[1d20+@{drop1}?{+Boon/-Bane|+0}d6kh1]]}} {{damage=[[(@{dmg1}d6)+(?{Bonus|0}d6)]]}} {{traits=@{prop1}}}"> </button>
                 </fieldset>
+            <!-- Extra Damage-->
+                <div class="mainSub">
+				    <h4>Extra Damage</h4>
+				    </div>
+				<fieldset class="repeating_ExtraDamage">
+				    <input type="text" name="attr_extraDam" value="" style="font-size:10px"><input type="number" name="attr_extrad6">d6<button type="roll" name="roll_extraDam" value="&{template:default} {{name=@{extraDam}}} {{=[[@{extrad6}]]}}"></button>
+	
+				</fieldset>
                 
               
 <!--- Inventory--->
@@ -204,9 +218,6 @@
 					</div>
 					
 					</div>
-			 </section>
-			 <section class="misc f-col wrap">
-			 
 			 </section>
         </main>
     </span>
@@ -270,7 +281,7 @@
 								<fieldset class="repeating_spellAttack">
 									<div class="sheet-row">
 										<input type="text" name="attr_aspl1" style="width:20em;font-size:8pt">
-										<button type="roll" name="roll_aspl1" value= "&{template:default}{{name=@{aspl1}}}{{Target=@{aspl1T}}}{{Duration=@{aspl1D}}}{{Roll=[[1d20+(@{aspl1M})+(?{+B/-b|0}d6kh1)]]}}{{Against=@{aspl1A}}}{{Damage=[[(@{aspl1Da})d6]]}}{{=@{aspl1desc}}}"></button>
+										<button type="roll" name="roll_aspl1" value= "&{template:default}{{name=@{aspl1}}}{{Target=@{aspl1T}}}{{Duration=@{aspl1D}}}{{Roll=[[1d20+(@{aspl1M})?{+Boon/-Bane|+0}d6kh1]]}}{{Against=@{aspl1A}}}{{Damage=[[(@{aspl1Da})d6]]}}{{=@{aspl1desc}}}"></button>
 									</div>
 								
 									<div class="sheet-row">
@@ -350,7 +361,7 @@
 				</div>
 				<div class="sheet-col">
 					<fieldset class="repeating_Notes">
-					<textarea name="attr_NotesRep" style="min-width:100%;max-width:100%;min-height:900px;max-height:900px"></textarea>
+					<textarea name="attr_NotesRep" style="min-width:100%;max-width:100%;min-height:90px;max-height:270px"></textarea>
 					</fieldset>
 				</div>
 			</div>
@@ -383,18 +394,18 @@
 						<!--- NPC Attributes--->
 							<div class="sheet-row">
 							<br>
-							Defense:<input type="number" name="attr_npcDefence"> Health:<input type="number" name="attr_npcHealth"> Damage<input type="number" name="attr_npcDamage">
+							Defense:<input type="text" name="attr_npcDefence" style="font-size:12px;width:6em"> Health:<input type="number" name="attr_npcHealth" style="font-size:16px;em:6"> Damage<input type="number" name="attr_npcDamage" style="font-size:16px;em:6">
 							</div>
 							<div class="sheet-row">
-								<button type="roll" name="roll_npcStr" style="font-size:10pt" value="&{template:default}{{name=Strength}}{{=[[1d20+(@{npcStrMod})+(?{+B/-b|0}d6kh1)]]}}">Strength:</button><input type="number" name="attr_npcStr"><input type="number" name="attr_npcStrMod" disabled="true" value="(@{npcStr}-10)">
-								<button type="roll" name="roll_npcAgi" style="font-size:10pt" value="&{template:default}{{name=Agility}}{{=[[1d20+(@{npcAgiMod})+(?{+B/-b|0}d6kh1)]]}}">Agility:</button><input type="number" name="attr_npcAgi"><input type="number" name="attr_npcAgiMod" disabled="true" value="(@{npcAgi}-10)">
+								<button type="roll" name="roll_npcStr" style="font-size:10pt" value="&{template:default}{{name=Strength}}{{=[[1d20+(@{npcStrMod})?{+Boon/-Bane|+0}d6kh1]]}}">Strength:</button><input type="number" name="attr_npcStr"><input type="number" name="attr_npcStrMod" disabled="true" value="(@{npcStr}-10)">
+								<button type="roll" name="roll_npcAgi" style="font-size:10pt" value="&{template:default}{{name=Agility}}{{=[[1d20+(@{npcAgiMod})?{+Boon/-Bane|+0}d6kh1]]}}">Agility:</button><input type="number" name="attr_npcAgi"><input type="number" name="attr_npcAgiMod" disabled="true" value="(@{npcAgi}-10)">
 							</div>
 							<div class="sheet-row">
-								<button type="roll" name="roll_npcInt" style="font-size:10pt" value="&{template:default}{{name=Intellect}}{{=[[1d20+(@{npcIntMod})+(?{+B/-b|0}d6kh1)]]}}">Intellect:</button><input type="number" name="attr_npcInt"><input type="number" name="attr_npcIntMod" disabled="true" value="(@{npcInt}-10)">
-								<button type="roll" name="rooll_npcWil" style="font-size:10pt" value="&{template:default}{{name=Will}}{{=[[1d20+(@{npcWilMod})+(?{+B/-b|0}d6kh1)]]}}">Will:</button><input type="number" name="attr_npcWil"><input type="number" name="attr_npcWilMod" disabled="true" value="(@{npcWil}-10)">
+								<button type="roll" name="roll_npcInt" style="font-size:10pt" value="&{template:default}{{name=Intellect}}{{=[[1d20+(@{npcIntMod})?{+Boon/-Bane|+0}d6kh1]]}}">Intellect:</button><input type="number" name="attr_npcInt"><input type="number" name="attr_npcIntMod" disabled="true" value="(@{npcInt}-10)">
+								<button type="roll" name="rooll_npcWil" style="font-size:10pt" value="&{template:default}{{name=Will}}{{=[[1d20+(@{npcWilMod})?{+Boon/-Bane|+0}d6kh1]]}}">Will:</button><input type="number" name="attr_npcWil"><input type="number" name="attr_npcWilMod" disabled="true" value="(@{npcWil}-10)">
 							</div>
 							<div class="sheet-row">
-								Size:<input type="number" name="attr_npcSize"> Speed:<input type="text" name="attr_npcSpeed">
+								Size:<input type="text" name="attr_npcSize" style="width:4em"> Speed:<input type="text" name="attr_npcSpeed">
 							</div>
 							<div class="sheet-row">
 							Languages:<input type="text" name="attr_npcLanguages">
@@ -404,7 +415,7 @@
 							</div>
 							<div class="sheet-row">
 								<div>
-									<input type="checkbox" class="sheet-toggle-show"/>
+									<input type="checkbox" name="attr_npcImmuneToggle"class="sheet-toggle-show"/>
 										<span><b>Show Immunities</b></span>
 										<div class="sheet-body">
 											Immune:<input type="text" name="attr_npcImmune" style="font-size:8pt">
@@ -435,7 +446,7 @@
 															<option value="(@{npcIntMod})">Intellect</option>
 															<option value="(@{npcWilMod})">Will</option>
 													</select>
-													<button type="roll" name="roll_npcAttack" value="&{template:default} {{name=@{npcName} - @{npcAttack}}} {{To Hit= [[1d20+@{npcDrop}+(@{npcBoons}d6kh1)]]}} {{damage=[[(@{npcAtkDmg}d6)+?{Bonus|0}d6)]]}} {{traits=@{npcProp}}}{{=@{npcAttackDesc}}}"> </button>
+													<button type="roll" name="roll_npcAttack" value="&{template:default} {{name=@{npcName} - @{npcAttack}}} {{To Hit= [[1d20+@{npcDrop}+@{npcBoons}d6kh1]]}} {{damage=[[@{npcAtkDmg}d6)]]}} {{traits=@{npcProp}}}{{=@{npcAttackDesc}}}"> </button>
 													Boons: <input type="number" name="attr_npcBoons" value="0">
 													<textarea name="attr_npcAttackDesc" style="max-width:350px;min-width:350px;font-size:8pt"></textarea>
 													
@@ -466,13 +477,13 @@
 												<fieldset class="repeating_npcSpell">
 													<div class="sheet-row">
 														<input type="text" name="attr_npcSpell" style="width:20em;font-size:8pt">
-														<button type="roll" name="roll_npcSpell" value= "&{template:default}{{name=@{npcSpell}}}{{Target=@{npcSpellT}}}{{Duration=@{npcSpellD}}}{{Roll=[[1d20+(@{npcSpellM})+(?{+B/-b|0}d6kh1)]]}}{{Against=@{npcSpellA}}}{{Damage=[[(@{npcSpellDa})d6]]}}{{=@{npcSpelldesc}}}"></button>
+														<button type="roll" name="roll_npcSpell" value= "&{template:default}{{name=@{npcSpell}}}{{Target=@{npcSpellT}}}{{Duration=@{npcSpellD}}}{{Roll=[[1d20+(@{npcSpellM})?{+Boon/-Bane|+0}d6kh1]]}}{{Against=@{npcSpellA}}}{{Damage=[[(@{npcSpellDa})d6]]}}{{=@{npcSpelldesc}}}"></button>
 													</div>
 														
 													<div class="sheet-row">
 														<div>
 															<input type="checkbox" class="sheet-toggle-show"/>
-															<span>Show <input type="text" name="attr_npcSpell"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_npcSpellc2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
+															<span>Show <input type="text" name="attr_npcSpellc"style="height:16px;width:20px;font-size:10px" value="">/<input type="text" name="attr_npcSpellc2"style="height:16px;width:20px;font-size:10px" value="">Charges</span>
 															<div class="sheet-body">
 															<input type="text" name="attr_npcSpellT" value="Target">
 															<input type="text" name="attr_npcSpellD" value="Duration">
@@ -487,7 +498,7 @@
 																<option value="Intellect">Intellect</option>
 																<option value="Will">Will</option>
 															</select>
-															<input type="number" name="attr_npcSpellDa" style="width:12em"><b>d6 damage</b>
+															<input type="number" name="attr_npcSpellDa" style="width:6em;font-size:10px"><b>d6 damage</b>
 															<textarea name="attr_npcSpelldesc" style="min-width:24em;max-width: 24em;min-height:20em;font-size:8pt"></textarea>
 															</div>
 														</div>
