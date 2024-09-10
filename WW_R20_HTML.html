@@ -192,6 +192,14 @@
                 </select>
                 <button type="roll" name="roll_atk1" value="&{template:default} {{name=@{atk1}}} {{To Hit= [[1d20+@{drop1}?{+Boon/-Bane|+0}d6kh1]]}} {{damage=[[(@{dmg1}d6)+(?{Bonus|0}d6)]]}} {{traits=@{prop1}}}"> </button>
                 </fieldset>
+            <!-- Extra Damage-->
+                <div class="mainSub">
+				    <h4>Extra Damage</h4>
+				    </div>
+				<fieldset class="repeating_Attack">
+				    <input type="text" name="attr_extraDam" value="" style="font-size:10px"><input type="number" name="attr_extrad6">d6<button type="roll" name="roll_extraDam" value=&{template:default}{{name="@{extraDam}}}{{=[[@{extrad6}]]}}"></button>
+	
+				</fieldset>
                 
               
 <!--- Inventory--->
